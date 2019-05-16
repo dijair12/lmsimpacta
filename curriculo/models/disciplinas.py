@@ -30,9 +30,9 @@ class Disciplina(models.Model):
 
     
     def clean(self):
-        if self.percentual_teorico > 100  or self.percentual.teorico < 0:
+        if self.percentual_teorico > 100  or self.percentual_teorico < 0:
             raise ValidationError('O percentual teórico deve estar entre 0 e 100.')
-        if self.percentual_pratico > 100  or self.percentual.pratico < 0:
+        if self.percentual_pratico > 100  or self.percentual_pratico < 0:
             raise ValidationError('O percentual prático deve estar entre 0 e 100.')
         if self.percentual_teorico + self.percentual_pratico != 100:
             raise ValidationError('A soma dos percentual deve ser 100.')
